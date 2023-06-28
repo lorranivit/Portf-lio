@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap');
+ 
+body {
+   margin: 0;
+   padding: 0;
+   font-family: 'Poppins', sans-serif;
+   color: #1E1E2A;
+}
+
+/* HEADER */
+
+.header-container {
+  height: 100vh;
+  width: 100vw;
+  background-color: #9400CC;
+  background-image: url('img/img.jpg');
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding: 0 112px;
+  position: relative;
+}
+
+h1{
+    font-size: 50px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+h2{
+    text-transform: uppercase;
+    letter-spacing: 4px;
+
+}
+
+button{
+    background-color: #FFFFFF;
+    color:blueviolet;
+    text-transform: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 13px 20px;
+    border-radius: 30px;
+    transition: .4s;
+}
+
+
+/* MENU-EU */
+
+.checkbox-container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkbox{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999; 
+    transition: 400ms ease-in-out 0s;
+}
+
+.checkbox .trace{
+   width: 50px;
+   height: 2px;
+   background-color: #1E1E2A;
+   position: absolute;
+   border-radius: 4px;
+   transition: 0.5s ease-in-out;
+}
+
+.checkbox .trace:nth-child(1) {
+    top: 26px;
+    transform: rotate(0);
+}
+
+.checkbox .trace:nth-child(2) {
+    top: 46px;
+    transform: rotate(0);
+}
+
+#toggle {
+    display: none;
+}
+  
+/* MENU */
+
+.menu { 
+  position: abusolute;
+  top: 28px;
+  right: 30px;
+  background-color: transparent;
+  height: 4px;
+  width: 10px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 0px #FFFFFF;
+ z-index: -1;
+  transition: 40ms ease-in-out 0s;
+  }
+
+.menu-itens {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  transition: 400ms ease-in-out 0s;
+}
+
+.menu-items ul {
+  list-style-type: none;
+}
+
+.menu-items ul li a {
+  margin: 10px 0;
+  color: #1E1E2A;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 4px; 
+  font-size: 40px;
+  }
+
+/* ANIMAÇÃO DO MENU */
+
+#toogle:checked + .checkbox .trace:nth-child(1) {
+  transform: rotate(45deg);
+  top: 47px;
+}
+
+#toogle:checked + .checkbox .trace:nth-child(2) {
+  transform: translate(-100px);
+  width: 30px;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#toogle:checked + .checkbox .trace:nth-child(3) {
+  transform: rotate (-45deg);
+  top: 48px;
+}
+
+#toogle:checked + .checkbox {
+  background-color: #FFFFFF;
+}
+
+#toogle:checked ~ .menu {
+  box-shadow: 0px 0px 0px 100vmax #FFFFFF;
+  z-index: 1;
+}
+
+#toogle:checked + .menu-items {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* CARDS */ 
+
+.container {
+  height: auto;
+  width: 100%; 
+  display: flex;
+  flex-direction: columen;
+  justify-content:space-evenly;
+  margin: 3rem 0;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 90%;
+}
+
+.card {
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+  margin: 3rem 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:  #9400D3;
+  background-image: url('img/img2.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: grayscale(0.5);
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+.card-text {
+  width: 40%;
+  letter-spacing: 1px;
+  color: #4F4F4F (109, 109, 109);
+}
+
+.card-wrapper {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.card-wrapper::bafore {
+  content: '';
+  position: abusolute;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  display: block;
+  border: 1px solid COLOCAR BRANCO;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+
+.card-wrapper h2 {
+  font-size: 40px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin: 0;
+  transition: 0.5 ease-in-out;
+}
+
+.card-wrapper p {
+  font-size: 0;
+  visibility: visible;
+  opacity: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.5 ease-in-out;
+}
+
+.card:hover {
+  filter: unset;
+}
+
+.card:hover > .card-wrapper::bafore {
+  height: 200px;
+  width: 200px;
+  opacity: 1;
+}
+
+.card:hover > .card-wrapper p {
+  opacity: 1;
+  visibility: visible;
+  font-size: 14px;
+}
+
+/* FOOTER */
+
+.footer {
+  width: 100%;
+  height: 100px;
+  background-color: MESMA COR NO ROXO;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: 1E1E2A;
+}
